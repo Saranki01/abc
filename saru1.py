@@ -14,13 +14,25 @@ class LinkedList:
             print (printval.data)
             printval = printval.next
 
+    def _inset_at_Beginning(self,newdata):
+        newNode = Node(newdata)
+        newNode.next = self.head
+        self.head = newNode
 
-l1 = LinkedList()
-l1.head = Node("Toyota")
+
+ll = LinkedList()
+ll.head = Node("Toyota")
 l2 = Node("BMW") 
 l3 = Node("Audi")
 l4= Node("Lambogini")
-l1.head.next = l2
+ll.head.next = l2
 l2.next = l3
 l3.next = l4
-l1.listprint()
+
+ll.listprint()
+print("")
+ll._inset_at_Beginning("Benz")
+ll.listprint()
+ll._inset_at_Beginning("chr")
+print("")
+ll.listprint()
